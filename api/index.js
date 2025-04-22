@@ -2,15 +2,17 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
+// Package that allows the processing of the MongoDB connection string from the .env file
 dotenv.config();
 
 
+// Connecting to the database
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
-        console.log("MongoDB is connected");
+        console.log("MongoDB is connected");//Success message 
         
     }).catch((err) => {
-        console.log(err);
+        console.log(err);// Error message
         
     })
 
