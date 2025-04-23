@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import userRoutes from './routes/user.route.js'
 
 // Package that allows the processing of the MongoDB connection string from the .env file
 dotenv.config();
@@ -21,7 +22,10 @@ const app = express();
 
 // Port where the server is going to run
 app.listen(3000, () => {
-    console.log("Server is now running at port 3000! You are good to go!! Thank you for using our platform!!!");
+    console.log("Server is now running at port 3000!!!");
     
 });
+
+app.use("/api/user", userRoutes);
+
 
